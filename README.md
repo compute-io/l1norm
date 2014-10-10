@@ -2,7 +2,7 @@ l1norm
 ===
 [![NPM version][npm-image]][npm-url] [![Build Status][travis-image]][travis-url] [![Coverage Status][coveralls-image]][coveralls-url] [![Dependencies][dependencies-image]][dependencies-url]
 
-> Computes the L1 norm (Manhattan norm) of an array of values.
+> Computes the L1 norm ([Manhattan/Taxicab norm](http://en.wikipedia.org/wiki/Norm_(mathematics))) of an array of values.
 
 
 ## Installation
@@ -19,14 +19,33 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 To use the module,
 
 ``` javascript
-var lib = require( 'compute-l1norm' );
+var l1norm = require( 'compute-l1norm' );
+```
+
+
+#### l1norm( arr )
+
+Computes the _L1_ norm (Manhattan/Taxicab norm) of an array of values.
+
+``` javascript
+var data = [ 2, 7, 3, -3, 9 ];
+
+var norm = l1norm( data );
+// returns ~24
 ```
 
 
 ## Examples
 
 ``` javascript
-var lib = require( 'compute-l1norm' );
+var l1norm = require( 'compute-l1norm' );
+
+var data = new Array( 1000 );
+for ( var i = 0; i < data.length; i++ ) {
+	data[ i ] = Math.random()*100 - 50;
+}
+
+console.log( l1norm( data ) );
 ```
 
 To run the example code from the top-level application directory,

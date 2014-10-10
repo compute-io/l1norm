@@ -25,7 +25,14 @@
   "keywords": [
     "compute.io",
     "compute",
-    "computation"
+    "computation",
+    "mathematics",
+    "math",
+    "linear algebra",
+    "norm",
+    "manhattan norm",
+    "taxicab norm",
+    "l1norm"
   ],
   "bugs": {
     "url": "https://github.com/compute-io/l1norm/issues"
