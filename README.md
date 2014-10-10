@@ -31,7 +31,7 @@ Computes the _L1_ norm (Manhattan/Taxicab norm) of an array of values.
 var data = [ 2, 7, 3, -3, 9 ];
 
 var norm = l1norm( data );
-// returns ~24
+// returns 24
 ```
 
 
