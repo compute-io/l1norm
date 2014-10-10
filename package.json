@@ -1,6 +1,6 @@
 {
   "name": "compute-l1norm",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Computes the L1 norm (Manhattan norm) of an array of values.",
   "author": {
     "name": "Athan Reines",
