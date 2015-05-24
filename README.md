@@ -16,7 +16,6 @@ For use in the browser, use [browserify](https://github.com/substack/node-browse
 
 ## Usage
 
-To use the module,
 
 ``` javascript
 var l1norm = require( 'compute-l1norm' );
@@ -33,6 +32,29 @@ var data = [ 2, 7, 3, -3, 9 ];
 var norm = l1norm( data );
 // returns 24
 ```
+
+For non-numeric `arrays`, provide an accessor `function` for accessing `numeric` values.
+
+``` javascript
+var arr = [
+	{'x':2},
+	{'x':7},
+	{'x':3},
+	{'x':-3},
+	{'x':9}
+];
+
+function getValue( d ) {
+	return d.x;
+}
+
+var n = l1norm( arr, getValue );
+// returns 24
+```
+
+
+__Note__: if provided an empty `array`, the function returns `null`.
+
 
 
 ## Examples
@@ -59,7 +81,7 @@ $ node ./examples/index.js
 
 ### Unit
 
-Unit tests use the [Mocha](http://visionmedia.github.io/mocha) test framework with [Chai](http://chaijs.com) assertions. To run the tests, execute the following command in the top-level application directory:
+Unit tests use the [Mocha](http://mochajs.org) test framework with [Chai](http://chaijs.com) assertions. To run the tests, execute the following command in the top-level application directory:
 
 ``` bash
 $ make test
@@ -83,15 +105,15 @@ $ make view-cov
 ```
 
 
+---
 ## License
 
-[MIT license](http://opensource.org/licenses/MIT). 
+[MIT license](http://opensource.org/licenses/MIT).
 
 
----
 ## Copyright
 
-Copyright &copy; 2014. Athan Reines.
+Copyright &copy; 2014-2015. The Compute.io Authors.
 
 
 [npm-image]: http://img.shields.io/npm/v/compute-l1norm.svg
